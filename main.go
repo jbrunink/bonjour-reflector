@@ -52,7 +52,7 @@ func main() {
 	for bonjourPacket := range bonjourPackets {
 		fmt.Println(bonjourPacket.packet.String())
 		if bonjourPacket.vlanTag == nil {
-			bonjourPacket.vlanTag = func(i uint16) *uint16 { return &i }(1),
+			bonjourPacket.vlanTag = func(i uint16) *uint16 { return &i }(1)
 		}
 		// Forward the mDNS query or response to appropriate VLANs
 		if bonjourPacket.isDNSQuery {
